@@ -1,9 +1,9 @@
-// import { qs, qsa, $on, $delegate } from './utils';
-
 import '../stylesheets/style.scss'
 
 import addItem from './modules/add-item'
-export const data = []
+import selectItem from './modules/select-item'
+import description from './modules/description'
 
-console.log('Hello!')
 addItem()
+selectItem()
+description()

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <title>Webpack ES6+ Sass Boilerplate</title>
@@ -33,14 +33,30 @@
         <div class="box box-a">
           <h2 class="box-title bg-green">ADD YOUR ITEM HERE</h2>
           <form action="" method="get" id="add-item-form">
+            <div class="list" id="list"></div>
             <div class="item">
-              <input type="text" class="item-input" name="" id="new-item" placeholder="Add Item" />
+              <input
+                type="text"
+                class="item-input"
+                name=""
+                id="new-item"
+                placeholder="Add Item"
+                value=""
+              />
               <input type="submit" class="submit" />
             </div>
           </form>
         </div>
         <div class="box box-b">
-          <h2 class="box-title bg-green"><span>PRD</span> DETAILS</h2>
+          <h2 class="box-title bg-green"><span id="item-details-name"></span> DETAILS</h2>
+          <form action="" method="get" id="details-form" class="details-form">
+            <label for="quantity">Quantity</label>
+            <input type="text" id="quantity" class="details-input" />
+            <label for="price">Price</label>
+            <input type="text" id="price" class="details-input" />
+            <label for="description">description</label>
+            <textarea name="" id="description" cols="30" rows="3"></textarea>
+          </form>
         </div>
       </div>
     </div>

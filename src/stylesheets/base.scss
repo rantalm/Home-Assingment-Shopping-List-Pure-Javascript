@@ -43,6 +43,7 @@ body {
 }
 .item {
   display: flex;
+  position: relative;
 }
 .item input[type='checkbox'] {
   position: relative;
@@ -59,7 +60,31 @@ body {
 .item-input:focus {
   color: #000000;
 }
+.item-input[data-completed='true'] {
+  text-decoration: line-through;
+}
 
 .submit {
   display: none;
+}
+.details-form {
+  padding: 0 5px;
+}
+.details-form label {
+  display: block;
+  color: #000;
+  font-size: 14px;
+  margin-top: 10px;
+}
+.details-form input,
+.details-form textarea {
+  width: 100%;
+}
+.delete-item {
+  color: red;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 1;
 }

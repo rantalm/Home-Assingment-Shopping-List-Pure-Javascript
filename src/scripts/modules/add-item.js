@@ -1,24 +1,28 @@
 /* eslint-disable prettier/prettier */
-import { data } from '../index'
+import { v4 as uuid } from 'uuid'
+import { getData, setData } from './dom-and-data'
 
 const addItem = () => {
   const form = document.querySelector('#add-item-form')
   form.addEventListener('submit', e => {
     e.preventDefault()
     const input = document.querySelector('#new-item')
-    const value = input.value
-    if (!input) return
+    const item = input.value
+    if (!item) return
 
-    data.push({ text: input, completed: false })
-
-    form.insertAdjacentHTML(
-      'beforebegin',
-      `
-      <div class="item">
-      <input type="checkbox" name="" id="" />
-      <input class="item-input" type="text" name="" id="" placeholder="" value="${value}"/>
-    </div>`
-    )
+    const data = getData()
+    const updated = data.map(el => {
+      el.selected = false
+      return el
+    })
+    updated.push({
+      item,
+      selected: true,
+      completed: false,
+      id: uuid(),
+      details: { completed: false, description: '', quantity: 0, price: 0 },
+    })
+    setData(updated)
     input.value = ''
   })
 }
